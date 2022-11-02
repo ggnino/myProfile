@@ -1,0 +1,112 @@
+.projects {
+	width: 100%;
+	height: 100%;
+	transition: all 0.2s;
+	z-index: 5000;
+	padding: -12rem 0;
+	&-apps {
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+
+		&-imgLink {
+			width: 15%;
+			height: 100%;
+			cursor: default;
+		}
+
+		.heading {
+			position: relative;
+			background-color: #070707;
+			border-radius: 2rem;
+			padding: 2rem;
+			margin: 5rem;
+			border: 2px solid #070707;
+		}
+
+		.my-img {
+			width: 100%;
+			&:hover {
+				filter: contrast(300%) brightness(100%)
+					drop-shadow(0rem 0rem 1rem #7fff00);
+			}
+			filter: contrast(100%) brightness(50%);
+
+			z-index: 10;
+		}
+
+		&-cards {
+			z-index: 10;
+			width: 100%;
+			padding: 5rem 0;
+		}
+	}
+}
+.morph2,
+.morph3 {
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+	opacity: 1;
+}
+.morph2 {
+	top: -0rem;
+}
+.morph3 {
+	bottom: 0rem;
+}
+@media screen and (max-width: 1680px) {
+	.projects {
+		&-apps-imgLink {
+			width: 20%;
+		}
+	}
+}
+@media screen and (max-width: 1310px) {
+	.projects {
+		&-apps {
+			&-imgLink {
+				.my-img {
+					filter: contrast(300%) brightness(100%)
+						drop-shadow(0rem 0rem 1rem #7fff00);
+				}
+			}
+			&-cards {
+				&.flex {
+					align-items: initial;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1080px) {
+	.projects {
+		&-apps-imgLink {
+			width: 30%;
+		}
+	}
+}
+@media screen and (max-width: 750px) {
+	.projects {
+		.heading {
+			font-size: 3rem;
+		}
+		&-apps {
+			&-imgLink {
+				width: 40%;
+			}
+			&-cards {
+				&.flex {
+					flex-direction: column;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 580px) {
+	.projects {
+		&-apps-imgLink {
+			width: 50%;
+		}
+	}
+}

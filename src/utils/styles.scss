@@ -1,0 +1,49 @@
+@import './variables.scss';
+.on-light {
+	right: 1rem;
+}
+.on-dark {
+	left: 1rem;
+}
+.default-fill {
+	fill: $primary-color;
+}
+.light-fill {
+	fill: $light;
+}
+.dark-fill {
+	fill: $dark;
+}
+.light-color {
+	color: $dark;
+}
+.dark-color {
+	color: $light;
+}
+.bg-light {
+	background-color: $light;
+}
+.bg-dark {
+	background-color: $dark;
+}
+.border-bottom {
+	border-bottom: 0.3rem solid $light;
+}
+.border-bottom-light {
+	border-bottom: 0.3rem solid $dark;
+}
+.border-top {
+	border-top: 0.3rem solid $light;
+}
+.border-top-light {
+	border-top: 0.3rem solid $dark;
+}
+
+@keyframes scrollDown {
+	0% {
+		top: 80%;
+	}
+	100% {
+		top: 90%;
+	}
+}

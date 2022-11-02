@@ -1,0 +1,135 @@
+@import '../../utils/variables.scss';
+.my-app {
+	width: 50rem;
+	position: relative;
+	border: 2px solid $primary-color;
+	padding: 2.5rem;
+	border-radius: 2rem;
+	z-index: 1000;
+	margin: 2rem;
+	box-shadow: 0rem 0rem 5rem $dark;
+	transition: all 0.2s;
+
+	&-img {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 1.5rem;
+		transition: all 0.2s;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		& > .my-heading {
+			justify-content: center;
+			position: absolute;
+			font-size: 3rem;
+			z-index: 1001;
+			top: 40%;
+			// left: 27%;
+			// text-align: center;
+			background-color: $dark;
+			padding: 1rem;
+			border-radius: 2rem;
+			border: 2px solid $primary-color;
+			transition: all 0.2s;
+			opacity: 0;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			transition: all 0.2s;
+			top: 0;
+			opacity: 0;
+			z-index: 1000;
+			width: 100%;
+			height: 100%;
+			border-radius: 2rem;
+			background-image: linear-gradient(
+					to right,
+					rgba(0, 0, 0, 0.662),
+					rgba(0, 0, 0, 0.662)
+				),
+				linear-gradient(to right, rgba(black, 0.5), rgba(black, 0.5));
+			border: 3px solid $primary-color;
+			box-shadow: 0 0 2rem $primary-color;
+		}
+		img {
+			position: relative;
+			width: 100%;
+			border-radius: 2rem;
+		}
+	}
+
+	p,
+	a {
+		font-size: 2rem;
+		padding: 1rem;
+		z-index: 200;
+		width: 100%;
+	}
+
+	&-btns {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		transition: all 0.2s;
+	}
+	#source,
+	#live {
+		width: 40%;
+	}
+	#source {
+		background-color: #007716;
+		border: 3px solid #007716;
+		&:hover {
+			& ~ .my-app-img {
+				&::before,
+				& > .my-heading {
+					opacity: 1;
+				}
+				&::before {
+					background-image: url(../../imgs/rain2.gif);
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+				}
+			}
+		}
+	}
+	#live {
+		&:hover {
+			& ~ .my-app-img {
+				&::before,
+				& > .my-heading {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1310px) {
+	.my-app {
+		&-img > .my-heading {
+			top: 30%;
+		}
+		width: 30rem;
+	}
+}
+@media screen and (max-width: 950px) {
+	.my-app {
+		&-img > .my-heading {
+			font-size: 2rem;
+			top: 38%;
+		}
+		p {
+			font-size: 1.6rem;
+		}
+
+		margin: 1rem auto;
+	}
+}

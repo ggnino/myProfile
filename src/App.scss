@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Peralta&family=Righteous&family=Russo+One&display=swap');
+@import './utils/variables.scss';
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; // setting rem
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+body {
+	transition: all 0.2s;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+p {
+	text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Russo One', cursive;
+	color: $light;
+	transition: all 0.2s;
+}
+
+p,
+span,
+a,
+li {
+	color: $light;
+	font-family: 'Righteous', cursive;
+	transition: all 0.2s;
+}
+
+svg,
+i {
+	transition: all 0.2s;
+}
