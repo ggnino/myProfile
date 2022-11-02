@@ -43,12 +43,14 @@ function AboutMe() {
 				targets: ['.morph '],
 				top: '38%',
 				left: '-100%',
+				rotate: 90,
 				opacity: 0,
 			});
 			anime({
 				targets: ['.morph1'],
 				top: '38%',
 				left: '100%',
+				rotate: -90,
 				opacity: 0,
 			});
 			// set element view reference
