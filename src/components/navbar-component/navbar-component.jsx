@@ -91,7 +91,7 @@ function Navbar() {
 		<nav
 			className={`navbar flex ${myClasses.bg} ${myClasses.text} ${myClasses.borderBottom}`}
 		>
-			<a href="#home" id="navbar-brand">
+			<a href="/" id="navbar-brand">
 				Guillermo Gonzalez
 			</a>
 			<ul>

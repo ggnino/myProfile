@@ -152,18 +152,12 @@ function App() {
 			// set body color to light
 			window.document.getElementsByTagName('body')[0].style.backgroundColor =
 				'#fff';
-			// set background svg fill colors for light
+			// set styling for light
 			setMyClasses((c) => {
 				return {
 					...c,
 					borderTop: 'border-top-light',
 					fill: 'dark-fill',
-				};
-			});
-			// set border color for light
-			setMyClasses((c) => {
-				return {
-					...c,
 				};
 			});
 		}
@@ -172,18 +166,12 @@ function App() {
 			// set body color to dark
 			window.document.getElementsByTagName('body')[0].style.backgroundColor =
 				'#070707';
-			// set border to dark
+			// set styling to dark
 			setMyClasses((c) => {
 				return {
 					...c,
 					borderTop: 'border-top',
-				};
-			});
-			// set svg fill colors for dark
-			setMyClasses((s) => {
-				return {
-					...s,
-					fill: 'fill-light',
+					fill: 'light-fill',
 				};
 			});
 		}
