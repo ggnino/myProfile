@@ -102,7 +102,7 @@ function Navbar() {
 					<span className={myClasses.slider} id="slider"></span>
 				</li>
 				<li>
-					<img src={img2} alt="light-mode-icon" />
+					<img src={img2} alt="dark-mode-icon" />
 				</li>
 				<li>
 					<a

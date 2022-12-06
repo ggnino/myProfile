@@ -81,7 +81,7 @@ function Projects() {
 					<h2 className="heading">My Projects</h2>
 					<a
 						className="projects-apps-imgLink flex-col"
-						href="https://www.github.com/ggnino"
+						href="https://www.github.com/ggnino/myProfile"
 						rel="noreferrer"
 						target="_blank"
 					>
