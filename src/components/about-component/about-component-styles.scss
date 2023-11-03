@@ -1,18 +1,21 @@
-@import '../../utils/variables.scss';
+@import "../../utils/variables.scss";
 .about {
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	transition: all 0.2s;
-	z-index: 2000;
+	z-index: 200;
+
 	.heading {
+		padding: 2rem;
 		font-size: 6rem;
 	}
 
 	&-me {
 		position: relative;
 		width: 100%;
-		height: 60rem;
-		z-index: 1000;
+		height: 50%;
+		gap: 10rem;
+		z-index: 100;
 
 		#aboutMe {
 			position: absolute;
@@ -33,7 +36,7 @@
 			color: $dark;
 
 			&::before {
-				content: '';
+				content: "";
 				filter: drop-shadow(0.5rem 0rem 0.3rem $primary-color);
 				display: block;
 				width: 10rem;
@@ -47,7 +50,7 @@
 			}
 
 			&::after {
-				content: '';
+				content: "";
 				filter: drop-shadow(0.5rem 0.1rem 0.3rem $primary-color);
 				display: block;
 				width: 5rem;
@@ -87,11 +90,9 @@
 		}
 
 		&-mern {
-			padding: 0.5rem;
-			margin: 1.5rem;
 			transition: all 0.5s;
 			width: 10%;
-			height: 45%;
+			padding: 5rem 2rem;
 			z-index: 100;
 			p {
 				position: relative;
@@ -99,10 +100,10 @@
 				padding: 2rem;
 				margin: 2rem auto;
 				font-size: 4rem;
-				font-family: 'Russo One', cursive;
+				font-family: "Russo One", cursive;
 				border: 0.4rem solid;
 				transition: all 0.5s;
-				width: 50%;
+				width: 40%;
 				cursor: default;
 
 				span {
@@ -117,7 +118,7 @@
 				}
 
 				&:hover {
-					width: 100%;
+					width: 80%;
 					color: $primary-color;
 
 					span {

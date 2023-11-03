@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables.scss";
 .on-light {
 	right: 1rem;
 }
@@ -10,6 +10,9 @@
 }
 .light-fill {
 	fill: $light;
+}
+.light-fill2 {
+	fill: $light-fill;
 }
 .dark-fill {
 	fill: $dark;

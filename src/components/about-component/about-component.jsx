@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import './about-component-styles.scss';
-import img1 from '../../imgs/about-me.png';
-import { useInView } from 'react-intersection-observer';
-import { MyContext } from '../../context';
-import { useContext } from 'react';
-import anime from 'animejs';
+import React, { useEffect } from "react";
+import "./about-component-styles.scss";
+import img1 from "../../imgs/about-me.png";
+import { useInView } from "react-intersection-observer";
+import { MyContext } from "../../context";
+import { useContext } from "react";
+import anime from "animejs";
 function AboutMe() {
 	// useContext hook for app state
 	const state = useContext(MyContext);
@@ -18,16 +18,16 @@ function AboutMe() {
 		if (inView) {
 			// show svg images
 			anime({
-				targets: ['.morph'],
-				top: '38%',
-				left: '-42%',
+				targets: [".morph"],
+				top: "38%",
+				left: "-20%",
 				rotate: 90,
 				opacity: 1,
 			});
 			anime({
-				targets: ['.morph1'],
-				top: '38%',
-				left: '42%',
+				targets: [".morph1"],
+				top: "39%",
+				left: "70%",
 				rotate: -90,
 				opacity: 1,
 			});
@@ -40,16 +40,16 @@ function AboutMe() {
 		else if (!inView) {
 			// hide svg images
 			anime({
-				targets: ['.morph '],
-				top: '38%',
-				left: '-100%',
+				targets: [".morph "],
+				top: "38%",
+				left: "-100%",
 				rotate: 90,
 				opacity: 0,
 			});
 			anime({
-				targets: ['.morph1'],
-				top: '38%',
-				left: '100%',
+				targets: [".morph1"],
+				top: "38%",
+				left: "100%",
 				rotate: -90,
 				opacity: 0,
 			});
@@ -108,7 +108,7 @@ function AboutMe() {
 							E<span className={`${myClasses.text}`}>XPRESSJS</span>
 						</p>
 						<p className={`${myClasses.text} ${myClasses.bg}`}>
-							R<span className={`${myClasses.text}`}>EACTJS</span>{' '}
+							R<span className={`${myClasses.text}`}>EACTJS</span>{" "}
 						</p>
 						<p className={`${myClasses.text} ${myClasses.bg}`}>
 							N<span className={`${myClasses.text}`}>ODEJS</span>
