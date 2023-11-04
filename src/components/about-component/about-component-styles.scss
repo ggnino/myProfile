@@ -1,7 +1,8 @@
 @import "../../utils/variables.scss";
 .about {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
+	padding: 1rem;
 	transition: all 0.2s;
 	z-index: 200;
 
@@ -13,7 +14,7 @@
 	&-me {
 		position: relative;
 		width: 100%;
-		height: 50%;
+		height: 100%;
 		gap: 10rem;
 		z-index: 100;
 

@@ -1,17 +1,13 @@
 .projects {
-	width: 100%;
-	height: 100%;
+	position: relative;
 	transition: all 0.2s;
 	z-index: 5000;
-	padding: -12rem 0;
+	width: 100%;
 	&-apps {
 		width: 100%;
-		height: 100%;
 		z-index: 10;
 
 		&-imgLink {
-			width: 15%;
-			height: 100%;
 			cursor: default;
 		}
 
@@ -38,23 +34,18 @@
 		&-cards {
 			z-index: 10;
 			width: 100%;
-			padding: 5rem 0;
+			padding: 1rem;
 		}
 	}
 }
 .morph2,
 .morph3 {
-	width: 100%;
-	position: absolute;
+	// width: 90%;
+	position: relative;
 	z-index: 1;
 	opacity: 1;
 }
-.morph2 {
-	top: -0rem;
-}
-.morph3 {
-	bottom: 0rem;
-}
+
 @media screen and (max-width: 1680px) {
 	.projects {
 		&-apps-imgLink {

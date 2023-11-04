@@ -11,7 +11,7 @@ function AboutMe() {
 	// destructuring app state
 	const { setRefs, onHover, myClasses } = state;
 	// useInView hook for element view
-	const [ref, inView] = useInView({ threshold: 0.95 });
+	const [ref, inView] = useInView({ threshold: 0.8 });
 	// useEffect hook for setting animations and element views
 	useEffect(() => {
 		// if element is in view
@@ -19,15 +19,15 @@ function AboutMe() {
 			// show svg images
 			anime({
 				targets: [".morph"],
-				top: "38%",
-				left: "-20%",
+				top: "33.9vh",
+				left: "-50vw",
 				rotate: 90,
 				opacity: 1,
 			});
 			anime({
 				targets: [".morph1"],
-				top: "39%",
-				left: "70%",
+				top: "-42.3vh",
+				left: "50vw",
 				rotate: -90,
 				opacity: 1,
 			});
@@ -41,14 +41,14 @@ function AboutMe() {
 			// hide svg images
 			anime({
 				targets: [".morph "],
-				top: "38%",
-				left: "-100%",
+				top: "33.9vh",
+				left: "-80vw",
 				rotate: 90,
 				opacity: 0,
 			});
 			anime({
 				targets: [".morph1"],
-				top: "38%",
+				top: "-42.3vh",
 				left: "100%",
 				rotate: -90,
 				opacity: 0,

@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from 'react';
-import './contact-component-styles.scss';
-import { useInView } from 'react-intersection-observer';
-import { MyContext } from '../../context';
-import img1 from '../../imgs/contact.png';
+import React, { useContext, useEffect } from "react";
+import "./contact-component-styles.scss";
+import { useInView } from "react-intersection-observer";
+import { MyContext } from "../../context";
+import img1 from "../../imgs/contact.png";
 
 function Contact() {
 	// useContext hook for app state
@@ -30,28 +30,26 @@ function Contact() {
 	}, [inView, setRefs]);
 	// render component
 	return (
-		<div className="container">
-			<section
-				className={`contact flex-col ${myClasses.bg} ${myClasses.borderTop}`}
-				id="contact"
-				ref={ref}
-			>
-				<div className="contact-img">
-					<img src={img1} alt="" />
-					<h2 className={`heading ${myClasses.text}`}>Contact Me</h2>
-					<h2 className="heading">
-						<a
-							className={`${myClasses.text}`}
-							type="email"
-							href="mailto:ggnino18@gmail.com"
-						>
-							Here
-						</a>
-					</h2>
-					<i className="arrow"></i>
-				</div>
-			</section>
-		</div>
+		<section
+			className={`contact flex-col ${myClasses.bg} ${myClasses.borderTop}`}
+			id="contact"
+			ref={ref}
+		>
+			<div className="contact-img">
+				<img src={img1} alt="" />
+				<h2 className={`heading ${myClasses.text}`}>Contact Me</h2>
+				<h2 className="heading">
+					<a
+						className={`${myClasses.text}`}
+						type="email"
+						href="mailto:ggnino18@gmail.com"
+					>
+						Here
+					</a>
+				</h2>
+				<i className="arrow"></i>
+			</div>
+		</section>
 	);
 }
 

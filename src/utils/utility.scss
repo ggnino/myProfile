@@ -65,8 +65,8 @@
 	}
 }
 .my-svg {
-	width: 50%;
-	position: absolute;
+	position: relative;
+	// width: 50%;
 	z-index: 5;
 	transition: all 0.2s;
 }
