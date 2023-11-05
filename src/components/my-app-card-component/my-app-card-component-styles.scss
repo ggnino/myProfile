@@ -1,4 +1,4 @@
-@import '../../utils/variables.scss';
+@import "../../utils/styles/variables.scss";
 .my-app {
 	width: 50rem;
 	position: relative;
@@ -38,7 +38,7 @@
 		}
 
 		&::before {
-			content: '';
+			content: "";
 			position: absolute;
 			transition: all 0.2s;
 			top: 0;
