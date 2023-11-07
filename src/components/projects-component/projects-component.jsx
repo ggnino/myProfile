@@ -39,19 +39,21 @@ function Projects() {
 		}
 		// if element is not in view
 		else if (!inView) {
-			// hide svg images
-			anime({
-				targets: [".morph2"],
-				translate: -10000,
-				opacity: 0,
-				rotate: 180,
-			});
-			anime({
-				targets: [".morph3"],
-				translate: 10000,
-				opacity: 0,
-				rotate: 0,
-			});
+			if (window.innerWidth > 750) {
+				// hide svg images
+				anime({
+					targets: [".morph2"],
+					translate: -10000,
+					opacity: 0,
+					rotate: 180,
+				});
+				anime({
+					targets: [".morph3"],
+					translate: 10000,
+					opacity: 0,
+					rotate: 0,
+				});
+			}
 			// set element view reference
 			setRefs((r) => {
 				return {
@@ -64,9 +66,10 @@ function Projects() {
 	// render component
 	return (
 		<section
+			id="projects"
 			className={`projects flex-col ${myClasses.bg} ${myClasses.borderTop} ${myClasses.myBg}`}
 		>
-			<div className={`projects-apps flex-col`}>
+			<div className={`projects-apps container flex-col`}>
 				<svg
 					className={`${myClasses.fill} my-svg morph2 `}
 					xmlns="http://www.w3.org/2000/svg"
@@ -104,8 +107,10 @@ function Projects() {
 					/>
 				</a>
 				<div className={`projects-apps-cards flex`}>
+					<MyAppCard title={"Tierra"} />
 					<MyAppCard title={"Touristico"} />
 					<MyAppCard title={"Yugioh"} />
+					<MyAppCard title={"iTech Dashboard"} />
 				</div>{" "}
 				<svg
 					className={`my-svg morph3 ${myClasses.fill}`}

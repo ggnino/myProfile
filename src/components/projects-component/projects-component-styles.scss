@@ -1,14 +1,24 @@
 .projects {
 	position: relative;
 	transition: all 0.2s;
-	z-index: 5000;
+	z-index: 50;
 	width: 100%;
+	padding: 0 1rem;
 	&-apps {
 		width: 100%;
 		z-index: 10;
+		gap: 1rem;
+		&.container {
+			min-height: 100vh;
+			height: 100%;
+		}
 
 		&-imgLink {
 			cursor: default;
+			z-index: 5;
+			width: 50%;
+			max-width: 50rem;
+			margin-bottom: 5rem;
 		}
 
 		.heading {
@@ -27,7 +37,6 @@
 					drop-shadow(0rem 0rem 1rem #7fff00);
 			}
 			filter: contrast(100%) brightness(50%);
-
 			z-index: 10;
 		}
 
@@ -35,69 +44,28 @@
 			z-index: 10;
 			width: 100%;
 			padding: 1rem;
+			flex-wrap: wrap;
+			gap: 3rem;
+			margin-bottom: 5rem;
 		}
 	}
 }
 .morph2,
 .morph3 {
-	// width: 90%;
-	position: relative;
+	position: absolute;
 	z-index: 1;
 	opacity: 1;
+	width: 100%;
+}
+.morph2 {
+	top: 0;
+}
+.morph3 {
+	bottom: 0;
 }
 
-@media screen and (max-width: 1680px) {
-	.projects {
-		&-apps-imgLink {
-			width: 20%;
-		}
-	}
-}
-@media screen and (max-width: 1310px) {
-	.projects {
-		&-apps {
-			&-imgLink {
-				.my-img {
-					filter: contrast(300%) brightness(100%)
-						drop-shadow(0rem 0rem 1rem #7fff00);
-				}
-			}
-			&-cards {
-				&.flex {
-					align-items: initial;
-				}
-			}
-		}
-	}
-}
-@media screen and (max-width: 1080px) {
-	.projects {
-		&-apps-imgLink {
-			width: 30%;
-		}
-	}
-}
-@media screen and (max-width: 750px) {
-	.projects {
-		.heading {
-			font-size: 3rem;
-		}
-		&-apps {
-			&-imgLink {
-				width: 40%;
-			}
-			&-cards {
-				&.flex {
-					flex-direction: column;
-				}
-			}
-		}
-	}
-}
-@media screen and (max-width: 580px) {
-	.projects {
-		&-apps-imgLink {
-			width: 50%;
-		}
+@media screen and (max-width: 1380px) {
+	.projects-apps .my-img {
+		filter: contrast(300%) brightness(100%) drop-shadow(0rem 0rem 1rem #7fff00);
 	}
 }
