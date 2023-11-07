@@ -6,9 +6,10 @@
 	height: 100vh;
 }
 .heading {
+	position: relative;
 	padding: 0.5rem;
 	margin: 1rem;
-	font-size: 5rem;
+	font-size: clamp(3rem, 4rem, 5rem);
 	z-index: 10;
 }
 .arrow {
