@@ -1,12 +1,11 @@
 @import "../../utils/styles/variables.scss";
 .my-app {
-	width: 50rem;
+	width: clamp(30rem, 50rem, 100%);
 	position: relative;
 	border: 2px solid $primary-color;
 	padding: 2.5rem;
 	border-radius: 2rem;
 	z-index: 1000;
-	margin: 2rem;
 	box-shadow: 0rem 0rem 5rem $dark;
 	transition: all 0.2s;
 
@@ -24,11 +23,9 @@
 		& > .my-heading {
 			justify-content: center;
 			position: absolute;
-			font-size: 3rem;
+			font-size: clamp(2rem, 2.5rem, 3rem);
 			z-index: 1001;
 			top: 40%;
-			// left: 27%;
-			// text-align: center;
 			background-color: $dark;
 			padding: 1rem;
 			border-radius: 2rem;
@@ -112,20 +109,9 @@
 		}
 	}
 }
-@media screen and (max-width: 1310px) {
-	.my-app {
-		&-img > .my-heading {
-			top: 30%;
-		}
-		width: 30rem;
-	}
-}
+
 @media screen and (max-width: 950px) {
 	.my-app {
-		&-img > .my-heading {
-			font-size: 2rem;
-			top: 38%;
-		}
 		p {
 			font-size: 1.6rem;
 		}
