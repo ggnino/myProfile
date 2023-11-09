@@ -1,10 +1,26 @@
-@import "../../utils/variables.scss";
+@import "../../utils/styles/variables.scss";
 .about {
 	width: 100%;
 	height: 100%;
 	padding: 1rem;
 	transition: all 0.2s;
-	z-index: 200;
+	z-index: 20;
+	position: relative;
+	overflow: hidden;
+
+	.morph,
+	.morph1 {
+		position: absolute;
+		top: 43.6vh;
+		max-width: 210rem;
+	}
+	.morph {
+		right: 64vw;
+	}
+
+	.morph1 {
+		left: 63vw;
+	}
 
 	.heading {
 		padding: 2rem;
@@ -14,17 +30,20 @@
 	&-me {
 		position: relative;
 		width: 100%;
-		height: 100%;
+		height: 50%;
+		max-width: 80vw;
+		// border: 5px solid red;
 		gap: 10rem;
-		z-index: 100;
+		z-index: 10;
+		padding: 2rem;
 
 		#aboutMe {
 			position: absolute;
 			font-size: 3rem;
 			width: 100%;
 			z-index: 1;
-			top: -20%;
-			right: -50%;
+			bottom: 20%;
+			right: 50%;
 			background-color: $light;
 			box-shadow: 0 0 0.5rem 0.5rem $primary-color;
 			padding: 2rem;
@@ -69,7 +88,6 @@
 			&:hover {
 				#aboutMe {
 					display: inline-block;
-					top: -50%;
 					right: 60%;
 					opacity: 1;
 					visibility: visible;
@@ -91,10 +109,10 @@
 		}
 
 		&-mern {
-			transition: all 0.5s;
-			width: 10%;
-			padding: 5rem 2rem;
+			transition: all 0.5s linear;
+			min-width: 25rem;
 			z-index: 100;
+
 			p {
 				position: relative;
 				text-align: center;
@@ -102,7 +120,6 @@
 				margin: 2rem auto;
 				font-size: 4rem;
 				font-family: "Russo One", cursive;
-				border: 0.4rem solid;
 				transition: all 0.5s;
 				width: 40%;
 				cursor: default;
@@ -135,163 +152,105 @@
 	}
 }
 
-@media screen and (max-width: 1917px) {
-	.about {
-		.about-me-img {
-			& ~ .about-me-mern {
-				p {
-					font-size: 3rem;
-
-					span {
-						font-size: 3rem;
-					}
-				}
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 1580px) {
-	.about {
-		&-me {
-			&-mern {
-				width: 20%;
-				p {
-					width: 50%;
-					text-align: center;
-					&:hover {
-						width: 100%;
-					}
-				}
-			}
-		}
-		.about-me-img {
-			#aboutMe {
-				font-size: 2rem;
-				width: 60%;
-
-				&::before {
-					bottom: 60%;
-					right: -18%;
-				}
-				&::after {
-					bottom: 66%;
-					right: -22%;
-				}
-			}
-			&:hover {
-				#aboutMe {
-					top: -15%;
-				}
-			}
-		}
-	}
-}
 @media screen and (max-width: 1118px) {
 	.about {
 		.heading {
-			font-size: 4rem;
+			margin-bottom: 15rem;
 		}
 		.my-img {
-			margin: 0 2rem;
-			width: 50%;
 			cursor: default;
 			filter: contrast(300%) brightness(100%)
 				drop-shadow(0rem 0rem 1rem $primary-color);
 		}
-		.about-me-img {
-			width: 100%;
-			&.flex {
-				flex-direction: row-reverse;
+		&-me {
+			flex-direction: column;
+			#aboutMe {
+				bottom: 58%;
+				right: 50%;
 			}
+			& &-img {
+				padding: 5rem;
 
-			& ~ .about-me-mern {
-				width: 40%;
-				p {
-					width: 50%;
-					font-size: 2rem;
-					color: $primary-color;
-					span {
+				&:hover {
+					#aboutMe {
+						display: inline-block;
+						right: 50%;
+					}
+
+					& ~ .about-me-mern {
+						p {
+							width: 10rem;
+							color: red;
+						}
+					}
+				}
+				&.flex {
+					flex-direction: row-reverse;
+				}
+
+				& ~ .about-me-mern {
+					flex-direction: row;
+					gap: 1rem;
+					width: 100%;
+					bottom: 1.5rem;
+					padding: 0 2rem;
+					flex-wrap: wrap;
+
+					p {
+						width: 10rem;
 						font-size: 2rem;
-						opacity: 1;
-						visibility: visible;
-						position: relative;
+						color: $primary-color;
+						span {
+							font-size: 2rem;
+							opacity: 1;
+							visibility: visible;
+							position: relative;
+						}
+					}
+				}
+				#aboutMe {
+					right: 30rem;
+					opacity: 1;
+					width: 50%;
+					font-size: 1.6rem;
+					visibility: visible;
+
+					&::after {
+						right: -20%;
+						bottom: 50%;
 					}
 				}
 			}
-			#aboutMe {
-				width: 30%;
-				position: relative;
-				top: 0%;
-				left: 0%;
-				opacity: 1;
-				font-size: 1.6rem;
-				visibility: visible;
+		}
+	}
+}
 
-				&::before,
-				&::after {
+@media screen and (max-width: 750px) {
+	.about {
+		& &-me-img {
+			&:hover {
+				#aboutMe {
+					right: 0;
+				}
+			}
+			#aboutMe {
+				position: relative;
+				right: 0;
+				bottom: 0;
+				width: 100%;
+
+				&::after,
+				&::before {
 					opacity: 0;
 					visibility: hidden;
 				}
 			}
-
-			&:hover {
-				& ~ .about-me-mern {
-					p {
-						width: 50%;
-					}
-				}
-				& > img ~ p {
-					top: 0%;
-					left: 0%;
-				}
-			}
 		}
 	}
-}
-@media screen and (max-width: 900px) {
-	.about {
-		&-me {
-			&.flex {
-				flex-direction: column;
-			}
-
-			margin-top: 8rem;
-		}
-		.about-me-img {
-			& ~ .about-me-mern {
-				width: 50%;
-				margin-top: 8rem;
-				p {
-					width: 50%;
-					font-size: 2rem;
-					color: $primary-color;
-					margin: 1rem;
-					span {
-						font-size: 2rem;
-						opacity: 1;
-						visibility: visible;
-						position: relative;
-					}
-				}
-			}
-		}
+	.about-me-img {
+		width: 100%;
 	}
-}
-@media screen and (max-width: 650px) {
-	.about {
-		.about-me-img {
-			&.flex {
-				flex-direction: column;
-			}
-			& ~ .about-me-mern {
-				display: none;
-			}
-			#aboutMe {
-				position: relative;
-				margin: 2rem;
-				width: 80%;
-			}
-		}
+	.my-img {
+		display: none;
 	}
 }

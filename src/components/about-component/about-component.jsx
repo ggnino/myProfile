@@ -11,7 +11,7 @@ function AboutMe() {
 	// destructuring app state
 	const { setRefs, onHover, myClasses } = state;
 	// useInView hook for element view
-	const [ref, inView] = useInView({ threshold: 0.8 });
+	const [ref, inView] = useInView({ threshold: 0.5 });
 	// useEffect hook for setting animations and element views
 	useEffect(() => {
 		// if element is in view
@@ -19,15 +19,13 @@ function AboutMe() {
 			// show svg images
 			anime({
 				targets: [".morph"],
-				top: "33.9vh",
-				left: "-50vw",
+				right: "64vw",
 				rotate: 90,
 				opacity: 1,
 			});
 			anime({
 				targets: [".morph1"],
-				top: "-42.3vh",
-				left: "50vw",
+				left: "63vw",
 				rotate: -90,
 				opacity: 1,
 			});
@@ -39,20 +37,21 @@ function AboutMe() {
 		// if element is not in view
 		else if (!inView) {
 			// hide svg images
-			anime({
-				targets: [".morph "],
-				top: "33.9vh",
-				left: "-80vw",
-				rotate: 90,
-				opacity: 0,
-			});
-			anime({
-				targets: [".morph1"],
-				top: "-42.3vh",
-				left: "100%",
-				rotate: -90,
-				opacity: 0,
-			});
+			if (window.innerWidth > 750) {
+				anime({
+					targets: [".morph "],
+					right: "100vw",
+					rotate: 90,
+					opacity: 0,
+				});
+				anime({
+					targets: [".morph1"],
+					left: "100vw",
+					rotate: -90,
+					opacity: 0,
+				});
+			}
+
 			// set element view reference
 			setRefs((r) => {
 				return { ...r, ref2: inView };
@@ -101,16 +100,24 @@ function AboutMe() {
 						</p>
 					</div>
 					<div className="about-me-mern flex-col">
-						<p className={`${myClasses.text} ${myClasses.bg}`}>
+						<p
+							className={`${myClasses.text} ${myClasses.bg} ${myClasses.borderColor}`}
+						>
 							M<span className={`${myClasses.text}`}>ONGODB</span>
 						</p>
-						<p className={`${myClasses.text} ${myClasses.bg}`}>
+						<p
+							className={`${myClasses.text} ${myClasses.bg} ${myClasses.borderColor}`}
+						>
 							E<span className={`${myClasses.text}`}>XPRESSJS</span>
 						</p>
-						<p className={`${myClasses.text} ${myClasses.bg}`}>
+						<p
+							className={`${myClasses.text} ${myClasses.bg} ${myClasses.borderColor}`}
+						>
 							R<span className={`${myClasses.text}`}>EACTJS</span>{" "}
 						</p>
-						<p className={`${myClasses.text} ${myClasses.bg}`}>
+						<p
+							className={`${myClasses.text} ${myClasses.bg} ${myClasses.borderColor}`}
+						>
 							N<span className={`${myClasses.text}`}>ODEJS</span>
 						</p>
 					</div>
