@@ -44,6 +44,12 @@
 .border-top-light {
 	border-top: 0.3rem solid $dark;
 }
+.border {
+	border: 0.4rem solid;
+}
+.border-light {
+	border: 0.4rem solid black;
+}
 
 @keyframes scrollDown {
 	0% {

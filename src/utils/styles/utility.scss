@@ -9,8 +9,9 @@
 	position: relative;
 	padding: 0.5rem;
 	margin: 1rem;
-	font-size: clamp(3rem, 4rem, 5rem);
+	font-size: clamp(4rem, 5rem, 6rem);
 	z-index: 10;
+	text-align: center;
 }
 .arrow {
 	display: block;
@@ -54,6 +55,7 @@
 .show {
 	display: initial;
 }
+
 .my-img {
 	filter: contrast(300%) brightness(3%);
 	width: 100%;
@@ -67,7 +69,8 @@
 }
 .my-svg {
 	position: relative;
-	z-index: 5;
+	width: 100%;
+	z-index: 32;
 	transition: all 0.2s;
 }
 .btn {
