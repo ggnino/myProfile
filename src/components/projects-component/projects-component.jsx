@@ -21,13 +21,11 @@ function Projects() {
 				targets: [".morph2"],
 				translate: 0,
 				opacity: 1,
-				rotate: 180,
 			});
 			anime({
 				targets: [".morph3"],
 				translate: 0,
 				opacity: 1,
-				rotate: 0,
 			});
 			// set element view reference
 			setRefs((r) => {
@@ -45,13 +43,11 @@ function Projects() {
 					targets: [".morph2"],
 					translate: -10000,
 					opacity: 0,
-					rotate: 180,
 				});
 				anime({
 					targets: [".morph3"],
 					translate: 10000,
 					opacity: 0,
-					rotate: 0,
 				});
 			}
 			// set element view reference
@@ -93,15 +89,6 @@ function Projects() {
 						onMouseLeave={(e) => onHover(e, inView)}
 						className="my-img"
 						src={img1}
-						style={
-							!inView && window.screen.width > 1200
-								? {
-										cursor: "default",
-										filter:
-											"contrast(100%) brightness(50%) drop-shadow(0rem 0rem 0rem #7fff00)",
-								  }
-								: {}
-						}
 						alt="projects-img"
 						title="Click For Portfolio Source Code"
 					/>
