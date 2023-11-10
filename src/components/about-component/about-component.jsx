@@ -19,7 +19,7 @@ function AboutMe() {
 			// show svg images
 			anime({
 				targets: [".morph"],
-				right: "64vw",
+				right: "64%",
 				rotate: 90,
 				opacity: 1,
 			});
