@@ -87,16 +87,14 @@ function AboutMe() {
 					<div className="about-me-img flex">
 						<img className="my-img" src={img1} alt="about-me-img" />
 						<p id="aboutMe">
-							&emsp;Hey, what's up! My name is Guillermo Gonzalez, I am a full
-							stack developer. I love music, I love to dance, so everytime I
-							open up my IDE I make sure I code my fingertips off. I like
-							working solo but love being a team player.
+							&emsp;Hey, what's up! My name is Guillermo Gonzalez, I am a web
+							developer who is crazy for Javascript. I love everything about it,
+							the good, the bad, and the debuggy.
 							<br />
-							&emsp; I do have a thing for problem solving as I am a Auto
-							Technician that transistioned into web development. I am
-							comfortable in leaving my comfort to learn new technologies and
-							new information. Even if, I have to go above and beyond, inorder
-							to overcome any obstacles that may present itself.
+							&emsp; I do not mind working solo but teamwork does make the dream
+							work. I am experienced in most aspects of Javascript such as
+							ReactJS, ExpressJS, and NodeJS. With experience in connectiong to
+							a non-sql database like MongoDB.
 						</p>
 					</div>
 					<div className="about-me-mern flex-col">
