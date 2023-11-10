@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from 'react';
-import './header-component-styles.scss';
-import anime from 'animejs';
-import { useInView } from 'react-intersection-observer';
-import img1 from '../../imgs/Intro.webp';
-import { MyContext } from '../../context';
+import React, { useContext, useEffect } from "react";
+import "./header-component-styles.scss";
+import anime from "animejs";
+import { useInView } from "react-intersection-observer";
+import img1 from "../../imgs/Intro.webp";
+import { MyContext } from "../../context";
 
 function Header() {
 	// useContext hook for app state
@@ -34,40 +34,41 @@ function Header() {
 				};
 			});
 		}
-		// if component has not mounted and screen width is bigger than 1200px
-		if (!isMounted && window.screen.width > 1200) {
+		// if component has not mounted and screen width is bigger than 1200px, start animation
+
+		if (!isMounted) {
 			// variable for animejs timeline
 			let tl = anime.timeline();
 			// animate the svg image
 			tl.add({
-				targets: 'path',
+				targets: "path",
 				strokeDashoffset: [anime.setDashoffset, 0],
-				easing: 'easeInOutSine',
+				easing: "easeInOutSine",
 				delay: function (el, i) {
 					return i * 10;
 				},
-				direction: 'forwards',
+				direction: "forwards",
 				loop: false,
 			}) // show header image
 				.add({
-					targets: '.header img',
-					left: 0,
+					targets: ".header img",
+					left: window.innerWidth < 1200 ? "-20%" : "0",
 				})
 				// show h1
 				.add({
-					targets: '.header h1',
+					targets: ".header h1",
 					opacity: 1,
 					duration: 500,
 				})
 				// animate and show h2
 				.add({
-					targets: '.header h2',
-					bottom: '2rem',
+					targets: ".header h2",
+					bottom: "2rem",
 					duration: 500,
 				})
 				// show arrow
 				.add({
-					targets: '.arrow',
+					targets: ".arrow",
 					opacity: 1,
 					duration: 500,
 				});
@@ -78,20 +79,11 @@ function Header() {
 	// render component
 	return (
 		<div className="container" ref={ref}>
-			<header className={`header ${myClasses.bg} ${myClasses.text}`}>
-				<h1
-					id="home"
-					className={
-						window.screen.width > 500 ? `${myClasses.text} ${myClasses.bg}` : ''
-					}
-				>
+			<header className={`header flex ${myClasses.bg} ${myClasses.text}`}>
+				<h1 id="home" className={`heading ${myClasses.text} ${myClasses.bg}`}>
 					FullStack <br /> Developer
 				</h1>
-				<h2
-					className={
-						window.screen.width > 500 ? `${myClasses.text} ${myClasses.bg}` : ''
-					}
-				>
+				<h2 className={`heading ${myClasses.text} ${myClasses.bg}`}>
 					Code Hard,
 					<br /> Play Hard
 				</h2>
@@ -110,66 +102,66 @@ function Header() {
 						<g mask='url("#SvgjsMask1557")'>
 							<path
 								d="M940.5 247.5L907.5 214.5M676.5 214.5L643.5 214.5M1105.5 247.5L1072.5 280.5L1039.5 280.5L1006.5 313.5M1402.5 280.5L1369.5 313.5L1336.5 313.5L1303.5 313.5L1270.5 313.5L1237.5 313.5L1204.5 313.5L1171.5 313.5L1138.5 313.5L1105.5 313.5L1072.5 313.5L1039.5 313.5M973.5 247.5L940.5 280.5L907.5 280.5L874.5 313.5L841.5 313.5L808.5 313.5L775.5 313.5L742.5 313.5M775.5 247.5L742.5 214.5L709.5 181.5L676.5 181.5L643.5 148.5L610.5 115.5L577.5 115.5L544.5 115.5L511.5 115.5L478.5 115.5M874.5 280.5L841.5 247.5L808.5 214.5L775.5 214.5L742.5 181.5M1468.5 280.5L1435.5 280.5L1402.5 280.5L1369.5 280.5L1336.5 280.5L1303.5 280.5L1270.5 280.5L1237.5 280.5L1204.5 247.5L1171.5 247.5L1138.5 247.5L1105.5 247.5L1072.5 247.5L1039.5 247.5L1006.5 247.5L973.5 247.5L940.5 247.5L907.5 247.5L874.5 280.5L841.5 280.5L808.5 280.5L775.5 247.5L742.5 247.5L709.5 214.5L676.5 214.5L643.5 181.5L610.5 181.5L577.5 181.5"
-								stroke={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								stroke={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 								strokeWidth="5.5"
 							></path>
 							<path
 								d="M569.25 181.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM899.25 214.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM635.25 214.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM998.25 313.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1031.25 313.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM734.25 313.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM470.25 115.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM734.25 181.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0z"
-								fill={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								fill={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 							></path>
 							<path
 								d="M1468.5 247.5L1435.5 247.5L1402.5 247.5L1369.5 247.5L1336.5 247.5L1303.5 247.5L1270.5 247.5L1237.5 247.5L1204.5 214.5"
-								stroke={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								stroke={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 								strokeWidth="5.5"
 							></path>
 							<path
 								d="M1196.25 214.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0z"
-								fill={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								fill={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 							></path>
 							<path
 								d="M973.5 346.5L940.5 313.5L907.5 313.5L874.5 346.5L841.5 379.5M1435.5 346.5L1402.5 313.5M1468.5 313.5L1435.5 346.5L1402.5 346.5L1369.5 346.5L1336.5 346.5L1303.5 346.5L1270.5 346.5L1237.5 346.5L1204.5 346.5L1171.5 346.5L1138.5 346.5L1105.5 346.5L1072.5 346.5L1039.5 346.5L1006.5 346.5L973.5 346.5L940.5 346.5"
-								stroke={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								stroke={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 								strokeWidth="5.5"
 							></path>
 							<path
 								d="M932.25 346.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM833.25 379.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1394.25 313.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0z"
-								fill={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								fill={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 							></path>
 							<path
 								d="M1039.5 181.5L1006.5 148.5L973.5 148.5L940.5 148.5L907.5 148.5M1006.5 181.5L973.5 214.5M1171.5 181.5L1138.5 214.5L1105.5 214.5M1072.5 181.5L1039.5 214.5L1006.5 214.5M1468.5 214.5L1435.5 214.5L1402.5 214.5L1369.5 214.5L1336.5 214.5L1303.5 214.5L1270.5 214.5L1237.5 214.5L1204.5 181.5L1171.5 181.5L1138.5 181.5L1105.5 181.5L1072.5 181.5L1039.5 181.5L1006.5 181.5L973.5 181.5L940.5 181.5"
-								stroke={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								stroke={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 								strokeWidth="5.5"
 							></path>
 							<path
 								d="M932.25 181.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM899.25 148.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM965.25 214.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1097.25 214.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM998.25 214.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0z"
-								fill={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								fill={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 							></path>
 							<path
 								d="M1402.5 181.5L1369.5 148.5L1336.5 148.5L1303.5 148.5M1072.5 148.5L1039.5 148.5M808.5 148.5L775.5 181.5M1435.5 181.5L1402.5 148.5M874.5 115.5L841.5 115.5M1468.5 181.5L1435.5 181.5L1402.5 181.5L1369.5 181.5L1336.5 181.5L1303.5 181.5L1270.5 181.5L1237.5 181.5L1204.5 148.5L1171.5 148.5L1138.5 148.5L1105.5 148.5L1072.5 148.5L1039.5 115.5L1006.5 115.5L973.5 115.5L940.5 115.5L907.5 115.5L874.5 115.5L841.5 148.5L808.5 148.5L775.5 148.5L742.5 148.5"
-								stroke={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								stroke={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 								strokeWidth="5.5"
 							></path>
 							<path
 								d="M734.25 148.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1295.25 148.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1031.25 148.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM767.25 181.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1394.25 148.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM833.25 115.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0z"
-								fill={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								fill={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 							></path>
 							<path
 								d="M214.5 379.5L181.5 379.5L148.5 379.5L115.5 379.5L82.5 379.5M577.5 412.5L544.5 445.5M1270.5 379.5L1237.5 412.5L1204.5 412.5L1171.5 445.5L1138.5 445.5L1105.5 445.5L1072.5 445.5L1039.5 445.5L1006.5 445.5L973.5 478.5L940.5 478.5L907.5 478.5L874.5 478.5L841.5 478.5M973.5 379.5L940.5 412.5L907.5 412.5L874.5 412.5L841.5 445.5L808.5 445.5L775.5 478.5M775.5 445.5L742.5 412.5L709.5 412.5L676.5 412.5L643.5 379.5L610.5 379.5L577.5 379.5L544.5 379.5L511.5 379.5L478.5 379.5L445.5 379.5M1336.5 379.5L1303.5 412.5L1270.5 412.5L1237.5 445.5L1204.5 445.5L1171.5 478.5L1138.5 478.5L1105.5 478.5M247.5 379.5L214.5 346.5L181.5 346.5L148.5 346.5L115.5 346.5L82.5 346.5M1006.5 379.5L973.5 412.5L940.5 445.5L907.5 445.5L874.5 445.5M643.5 412.5L610.5 445.5L577.5 445.5L544.5 478.5L511.5 478.5L478.5 478.5L445.5 478.5L412.5 478.5L379.5 478.5L346.5 478.5L313.5 478.5L280.5 478.5L247.5 478.5M1171.5 379.5L1138.5 412.5L1105.5 412.5L1072.5 412.5L1039.5 412.5L1006.5 412.5M1468.5 379.5L1435.5 379.5L1402.5 379.5L1369.5 379.5L1336.5 379.5L1303.5 379.5L1270.5 379.5L1237.5 379.5L1204.5 379.5L1171.5 379.5L1138.5 379.5L1105.5 379.5L1072.5 379.5L1039.5 379.5L1006.5 379.5L973.5 379.5L940.5 379.5L907.5 379.5L874.5 379.5L841.5 412.5L808.5 412.5L775.5 445.5L742.5 445.5L709.5 445.5L676.5 445.5L643.5 412.5L610.5 412.5L577.5 412.5L544.5 412.5L511.5 412.5L478.5 412.5L445.5 412.5L412.5 412.5L379.5 412.5L346.5 412.5L313.5 412.5L280.5 379.5L247.5 379.5L214.5 379.5L181.5 412.5"
-								stroke={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								stroke={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 								strokeWidth="5.5"
 							></path>
 							<path
 								d="M173.25 412.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM74.25 379.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM536.25 445.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM833.25 478.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM767.25 478.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM437.25 379.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1097.25 478.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM74.25 346.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM866.25 445.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM239.25 478.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM998.25 412.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0z"
-								fill={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								fill={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 							></path>
 							<path
 								d="M1105.5 115.5L1072.5 82.5M1303.5 115.5L1270.5 115.5L1237.5 115.5L1204.5 82.5M1435.5 115.5L1402.5 82.5L1369.5 82.5M1336.5 115.5L1303.5 82.5L1270.5 82.5L1237.5 82.5M1138.5 115.5L1105.5 82.5M1468.5 148.5L1435.5 115.5L1402.5 115.5L1369.5 115.5L1336.5 115.5L1303.5 115.5L1270.5 148.5L1237.5 148.5L1204.5 115.5L1171.5 115.5L1138.5 115.5L1105.5 115.5L1072.5 115.5L1039.5 82.5L1006.5 82.5L973.5 82.5L940.5 82.5L907.5 82.5L874.5 82.5L841.5 82.5L808.5 115.5"
-								stroke={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								stroke={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 								strokeWidth="5.5"
 							></path>
 							<path
 								d="M800.25 115.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1064.25 82.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1196.25 82.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1361.25 82.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1229.25 82.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0zM1097.25 82.5 a8.25 8.25 0 1 0 16.5 0 a8.25 8.25 0 1 0 -16.5 0z"
-								fill={myClasses.bg.includes('dark') ? '#7fff00' : '#070707'}
+								fill={myClasses.bg.includes("dark") ? "#7fff00" : "#070707"}
 							></path>
 						</g>
 					</g>
