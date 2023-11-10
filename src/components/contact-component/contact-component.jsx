@@ -10,7 +10,7 @@ function Contact() {
 	// destructuring app state
 	const { setRefs, myClasses } = state;
 	// useInView hook for element view
-	const [ref, inView] = useInView({ threshold: 0.92 });
+	const [ref, inView] = useInView({ threshold: 0.2 });
 	// useEffect hook for setting element views
 	useEffect(() => {
 		// if element is in view

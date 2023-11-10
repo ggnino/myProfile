@@ -3,26 +3,14 @@ import "./navbar-component-styles.scss";
 import img1 from "../../imgs/sun.png";
 import img2 from "../../imgs/full-moon.png";
 import { MyContext } from "../../context";
-import anime from "animejs";
 
 function Navbar() {
 	// useContext hook for app state
 	const state = useContext(MyContext);
 	// destructuring app state
-	const { refs, setMyStyle, isMounted, clicker, myClasses, setMyClasses } =
-		state;
+	const { refs, clicker, myClasses, setMyClasses } = state;
 	// useEffect hook for setting animations and classes
 	useEffect(() => {
-		// if component mounted and screen width is greater than 1200px
-		if (isMounted && window.screen.width > 1200) {
-			// show navbar-brand
-			anime({
-				targets: ".navbar #navbar-brand",
-				left: 0,
-			});
-			// show navbar links
-			anime({ targets: ".navbar li", right: 0 });
-		}
 		// if border-bottom dark class and light-color class are applied
 		if (
 			myClasses.borderBottom === "border-bottom" &&
@@ -78,14 +66,7 @@ function Navbar() {
 				};
 			});
 		}
-	}, [
-		refs,
-		isMounted,
-		setMyClasses,
-		myClasses.text,
-		myClasses.borderBottom,
-		setMyStyle,
-	]);
+	}, [refs, setMyClasses, myClasses.text, myClasses.borderBottom]);
 	// render component
 	return (
 		<nav
@@ -106,7 +87,7 @@ function Navbar() {
 				</li>
 				<li>
 					<a
-						className={myClasses.text}
+						className={myClasses.text + " " + myClasses.color}
 						href="#about"
 						style={refs.ref2 ? { color: "#7fff00" } : { color: "" }}
 					>
