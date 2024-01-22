@@ -35,14 +35,14 @@ function MyAppCard(props) {
 				source: "https://github.com/ggnino/restaurantLanding",
 				live: "https://ggnino.github.io/restaurantLanding/",
 				img: img3,
-				desc: "A landing page design for restaurant clients. The page is based off a plant based restaurant but can be customized for any type of restaurant. Landing page is a simple and straight forward design for easy user navigation. Needs the mobile responsiveness update for the repo, will update soon. ",
+				desc: "A landing page design for restaurant clients. The page is based off a plant based restaurant but can be customized for any type of restaurant. Landing page is a simple and straight forward design for easy user navigation.  ",
 			});
 		} else if (props.title === "iTech Dashboard") {
 			setProject({
 				source: "https://github.com/ggnino/adminDashBoard",
 				live: "https://ggnino.github.io/adminDashBoard/",
 				img: img4,
-				desc: "A page design for a ticketing service client. The page design is for the technician view. Tech can view how many issues resolved and how many rejected. Average ticket resole time is displayed as well. Tech can view notifications, account and search on top right. Also a ticket queue is displayed so technician can view and manage its time accordingly.",
+				desc: "A page design for a ticketing service client. The page design is for the technician view. Tech can view how many issues resolved and how many rejected. Average ticket resolve time is displayed as well. Tech can view notifications, account and search on top right. Also a ticket queue is displayed so technician can view and manage their time accordingly.",
 			});
 		}
 	}, [props.title, setProject]);
