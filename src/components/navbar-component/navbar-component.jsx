@@ -77,13 +77,13 @@ function Navbar() {
 			</a>
 			<ul className="flex">
 				<li>
-					<img src={img1} alt="light-mode-icon" />
+					<img src={img2} alt="dark-mode-icon" />
 				</li>
 				<li className="slider-container round-border" onClick={clicker}>
 					<span className={myClasses.slider} id="slider"></span>
 				</li>
 				<li>
-					<img src={img2} alt="dark-mode-icon" />
+					<img src={img1} alt="light-mode-icon" />
 				</li>
 				<li>
 					<a
