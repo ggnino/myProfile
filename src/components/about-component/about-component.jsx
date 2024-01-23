@@ -62,7 +62,7 @@ function AboutMe() {
 	return (
 		<div className="container">
 			<section
-				className={`about flex-col ${myClasses.bg} ${myClasses.text} ${myClasses.borderBottom} ${myClasses.borderTop}`}
+				className={`about flex flex-col ${myClasses.bg} ${myClasses.text} ${myClasses.borderBottom} ${myClasses.borderTop}`}
 				ref={ref}
 				id="about"
 			>
@@ -97,7 +97,7 @@ function AboutMe() {
 							a non-sql database like MongoDB.
 						</p>
 					</div>
-					<div className="about-me-mern flex-col">
+					<div className="about-me-mern flex flex-col">
 						<p
 							className={`${myClasses.text} ${myClasses.bg} ${myClasses.borderColor}`}
 						>

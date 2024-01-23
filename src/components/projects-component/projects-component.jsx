@@ -63,9 +63,9 @@ function Projects() {
 	return (
 		<section
 			id="projects"
-			className={`projects flex-col ${myClasses.bg} ${myClasses.borderTop} ${myClasses.myBg}`}
+			className={`projects flex flex-col ${myClasses.bg} ${myClasses.borderTop} ${myClasses.myBg}`}
 		>
-			<div className={`projects-apps container flex-col`}>
+			<div className={`projects-apps container flex flex-col`}>
 				<svg
 					className={`${myClasses.fill} my-svg morph2 `}
 					xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ function Projects() {
 				</svg>
 				<h2 className="heading">My Projects</h2>
 				<a
-					className="projects-apps-imgLink flex-col"
+					className="projects-apps-imgLink flex flex-col"
 					href="https://www.github.com/ggnino/myProfile"
 					rel="noreferrer"
 					target="_blank"

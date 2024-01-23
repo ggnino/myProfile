@@ -1,10 +1,10 @@
 @import "../../utils/styles/variables.scss";
 .my-app {
-	width: clamp(30rem, 50rem, 100%);
+	width: clamp(30rem, 50vw, 50rem);
+	height: clamp(10rem, 50vh, 65rem);
 	position: relative;
 	border: 2px solid $primary-color;
 	padding: 2.5rem;
-	border-radius: 2rem;
 	z-index: 1000;
 	box-shadow: 0rem 0rem 5rem $dark;
 	transition: all 0.2s;
@@ -15,10 +15,6 @@
 		height: 100%;
 		margin: 1.5rem;
 		transition: all 0.2s;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
 
 		& > .my-heading {
 			justify-content: center;
@@ -28,8 +24,7 @@
 			top: 40%;
 			background-color: $dark;
 			padding: 1rem;
-			border-radius: 2rem;
-			border: 2px solid $primary-color;
+			border: 0.2rem solid $primary-color;
 			transition: all 0.2s;
 			opacity: 0;
 		}
@@ -40,7 +35,7 @@
 			transition: all 0.2s;
 			top: 0;
 			opacity: 0;
-			z-index: 1000;
+			z-index: 500;
 			width: 100%;
 			height: 100%;
 			border-radius: 2rem;
@@ -56,10 +51,11 @@
 		img {
 			position: relative;
 			width: 100%;
-			border-radius: 2rem;
 		}
 	}
-
+	p {
+		height: 100%;
+	}
 	p,
 	a {
 		font-size: 2rem;
@@ -69,11 +65,8 @@
 	}
 
 	&-btns {
-		display: flex;
 		flex-direction: column-reverse;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
+		height: 100%;
 		transition: all 0.2s;
 	}
 	#source,
@@ -82,7 +75,7 @@
 	}
 	#source {
 		background-color: #007716;
-		border: 3px solid #007716;
+		border: 0.3rem solid #007716;
 		&:hover {
 			& ~ .my-app-img {
 				&::before,

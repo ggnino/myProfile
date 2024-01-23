@@ -5,7 +5,7 @@ import "./utils/styles/utility.scss";
 import Header from "./components/header-component/header-component";
 import AboutMe from "./components/about-component/about-component";
 import { MyContext } from "./context";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Projects from "./components/projects-component/projects-component";
 import Contact from "./components/contact-component/contact-component";
 import { onClick, onHover1 } from "./utils/functions/handler-functions.js";
@@ -25,6 +25,13 @@ function App() {
 		myBg: "",
 		nav: "",
 	});
+	const [project, setProject] = useState({
+		source: "",
+		live: "",
+		img: "",
+		desc: "",
+	});
+	const fn = useRef(setProject);
 
 	// useEffect hook for styling
 	useEffect(() => {
@@ -65,6 +72,7 @@ function App() {
 			value={{
 				refs,
 				setRefs,
+				project, setProject,
 				onHover: onHover1(myClasses, setMyClasses),
 				isMounted,
 				setIsMounted,

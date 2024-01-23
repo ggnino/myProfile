@@ -50,8 +50,10 @@ function MyAppCard(props) {
 	// render component
 	return (
 		<>
-			<div className={`my-app ${myClasses.bg}`}>
-				<div className={`my-app-btns ${myClasses.bg}`}>
+			<div className={`my-app round-border ${myClasses.bg}`}>
+				<div
+					className={`my-app-btns flex flex-col round-border ${myClasses.bg}`}
+				>
 					<a
 						className="btn"
 						href={project.source}
@@ -71,8 +73,8 @@ function MyAppCard(props) {
 						Live
 					</a>
 					<p className={`${myClasses.text}`}>{project.desc}</p>
-					<div className="my-app-img">
-						<h2 className="my-heading">{props.title}</h2>
+					<div className="my-app-img flex round-border">
+						<h2 className="my-heading round-border">{props.title}</h2>
 						<img
 							src={project.img}
 							alt={`${props.title.toLowerCase()}-app-img`}

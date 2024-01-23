@@ -1,9 +1,15 @@
 @import "./variables.scss";
+.no-show {
+	display: none;
+}
+.show {
+	display: initial;
+}
 .on-light {
-	right: 1rem;
+	transform: translateX(1rem);
 }
 .on-dark {
-	left: 1rem;
+	transform: translateX(-1rem);
 }
 .default-fill {
 	fill: $primary-color;
@@ -49,6 +55,9 @@
 }
 .border-light {
 	border: 0.4rem solid black;
+}
+.round-border {
+	border-radius: 2rem;
 }
 
 @keyframes scrollDown {

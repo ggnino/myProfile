@@ -31,7 +31,7 @@ function Contact() {
 	// render component
 	return (
 		<section
-			className={`contact flex-col ${myClasses.bg} ${myClasses.borderTop}`}
+			className={`contact flex flex-col ${myClasses.bg} ${myClasses.borderTop}`}
 			id="contact"
 			ref={ref}
 		>

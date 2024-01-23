@@ -79,7 +79,7 @@ function Navbar() {
 				<li>
 					<img src={img1} alt="light-mode-icon" />
 				</li>
-				<li className="slider-container" onClick={clicker}>
+				<li className="slider-container round-border" onClick={clicker}>
 					<span className={myClasses.slider} id="slider"></span>
 				</li>
 				<li>
