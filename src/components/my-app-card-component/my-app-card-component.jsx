@@ -73,9 +73,10 @@ function MyAppCard(props) {
 						Live
 					</a>
 					<p className={`${myClasses.text}`}>{project.desc}</p>
-					<div className="my-app-img flex round-border">
+					<div className="my-app-img flex">
 						<h2 className="my-heading round-border">{props.title}</h2>
 						<img
+							className="round-border"
 							src={project.img}
 							alt={`${props.title.toLowerCase()}-app-img`}
 						/>
