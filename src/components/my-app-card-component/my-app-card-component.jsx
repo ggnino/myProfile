@@ -35,7 +35,7 @@ function MyAppCard(props) {
 				source: "https://github.com/ggnino/restaurantLanding",
 				live: "https://ggnino.github.io/restaurantLanding/",
 				img: img3,
-				desc: "A landing page design for restaurant clients. The page is based off a plant based restaurant but can be customized for any type of restaurant. Landing page is a simple and straight forward design for easy user navigation.  ",
+				desc: "A landing page design for a restaurant client. The page was built with a plant based theme in mind of the current restaurant, but can be customized for any type of restaurant. Landing page is a simple and straight forward design for easy user navigation. Built this page with ReactJS ,SCSS and delpoyed to github pages. ",
 			});
 		} else if (props.title === "iTech Dashboard") {
 			setProject({

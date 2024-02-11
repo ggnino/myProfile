@@ -1,7 +1,6 @@
 @import "../../utils/styles/variables.scss";
 .my-app {
 	width: clamp(30rem, 50vw, 50rem);
-	height: clamp(10rem, 50vh, 65rem);
 	position: relative;
 	border: 2px solid $primary-color;
 	padding: 2.5rem;

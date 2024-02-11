@@ -163,6 +163,7 @@
 		}
 		&-me {
 			flex-direction: column;
+			max-width: 100%;
 			#aboutMe {
 				bottom: 58%;
 				right: 50%;
@@ -225,27 +226,39 @@
 
 @media screen and (max-width: 750px) {
 	.about {
-		& &-me-img {
-			&:hover {
-				#aboutMe {
-					right: 0;
-				}
-			}
-			#aboutMe {
-				position: relative;
-				right: 0;
-				bottom: 0;
-				width: 100%;
-
-				&::after,
-				&::before {
-					opacity: 0;
-					visibility: hidden;
-				}
-			}
+		.heading {
+			position: relative;
+			top: -10vh;
+			margin: 0;
 		}
-		.my-img {
-			display: none;
+		& &-me {
+			gap: 0;
+			padding: 1rem;
+			align-items: initial;
+			&-img {
+				&:hover {
+					#aboutMe {
+						right: 0;
+					}
+				}
+				& ~ .about-me-mern {
+					padding: 0;
+				}
+				#aboutMe {
+					position: relative;
+					right: 0;
+					bottom: 0;
+					width: 100%;
+					&::after,
+					&::before {
+						opacity: 0;
+						visibility: hidden;
+					}
+				}
+			}
+			.my-img {
+				display: none;
+			}
 		}
 	}
 }
