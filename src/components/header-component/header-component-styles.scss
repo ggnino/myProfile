@@ -4,12 +4,12 @@
 	padding: 2rem 0;
 	width: 100%;
 	height: 100%;
-	transition: all 0.2s;
 	img {
 		position: absolute;
-		left: -50%;
-		width: clamp(70rem, 50%, 80%);
+		left: -1000%;
+		width: clamp(50rem, 50vw, 100rem);
 		filter: contrast(300%);
+		transition: all 0.2s linear;
 	}
 	svg {
 		width: 100%;
@@ -38,6 +38,9 @@
 		right: 0;
 		bottom: -20rem;
 		margin: 3rem;
+	}
+	.heading {
+		font-size: clamp(3rem, 5vw, 5rem);
 	}
 	.arrow {
 		animation: scrollDown 1s ease-in-out infinite alternate;
