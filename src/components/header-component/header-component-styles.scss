@@ -6,10 +6,10 @@
 	height: 100%;
 	img {
 		position: absolute;
-		left: -1000%;
+		left: -100%;
 		width: clamp(50rem, 50vw, 100rem);
 		filter: contrast(300%);
-		transition: all 0.2s linear;
+		transition: all 0.1s linear;
 	}
 	svg {
 		width: 100%;
@@ -31,7 +31,7 @@
 		left: 0;
 		right: 0;
 		margin: 0 auto;
-		width: 32rem;
+		width: clamp(10rem, 50vw, 32rem);
 		opacity: 0;
 	}
 	h2 {

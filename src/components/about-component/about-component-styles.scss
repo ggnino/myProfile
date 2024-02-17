@@ -2,11 +2,12 @@
 .about {
 	width: 100%;
 	height: 100%;
-	padding: 1rem;
+	gap: 2rem;
+	padding: 5rem 0;
 	transition: all 0.2s;
 	z-index: 20;
 	position: relative;
-	overflow: hidden;
+	// overflow: hidden;
 
 	.morph,
 	.morph1 {
@@ -24,24 +25,20 @@
 
 	.heading {
 		padding: 2rem;
-		font-size: 6rem;
+		margin: 5rem;
 	}
 
 	&-me {
 		position: relative;
 		width: 100%;
-		height: 50%;
-		max-width: 80vw;
-		gap: 10rem;
 		z-index: 10;
-		padding: 2rem;
 
 		#aboutMe {
 			position: absolute;
-			font-size: 3rem;
-			width: 100%;
+			font-size: 2rem;
+			width: 38rem;
 			z-index: 1;
-			bottom: 20%;
+			top: -1vh;
 			right: 50%;
 			background-color: $light;
 			box-shadow: 0 0 0.5rem 0.5rem $primary-color;
@@ -117,7 +114,7 @@
 				text-align: center;
 				padding: 2rem;
 				margin: 2rem auto;
-				font-size: 4rem;
+				font-size: clamp(2rem, 5vw, 4rem);
 				font-family: "Russo One", cursive;
 				transition: all 0.5s;
 				width: 40%;
@@ -151,10 +148,11 @@
 	}
 }
 
-@media screen and (max-width: 1118px) {
+@media screen and (max-width: 1200px) {
 	.about {
 		.heading {
-			margin-bottom: 15rem;
+			top: clamp(-15rem, -20vh, -20rem);
+			margin: 0;
 		}
 		.my-img {
 			cursor: default;
@@ -163,42 +161,30 @@
 		}
 		&-me {
 			flex-direction: column;
-			max-width: 100%;
 			#aboutMe {
-				bottom: 58%;
 				right: 50%;
 			}
 			& &-img {
-				padding: 5rem;
+				margin: 1rem;
 
 				&:hover {
-					#aboutMe {
-						display: inline-block;
-						right: 50%;
-					}
-
 					& ~ .about-me-mern {
 						p {
 							width: 10rem;
 						}
 					}
 				}
-				&.flex {
-					flex-direction: row-reverse;
-				}
 
 				& ~ .about-me-mern {
 					flex-direction: row;
-					gap: 1rem;
 					width: 100%;
-					bottom: 1.5rem;
-					padding: 0 2rem;
+					gap: 1rem;
 					flex-wrap: wrap;
 
 					p {
 						width: 10rem;
-						font-size: 2rem;
 						color: $primary-color;
+
 						span {
 							font-size: 2rem;
 							opacity: 1;
@@ -208,10 +194,7 @@
 					}
 				}
 				#aboutMe {
-					right: 30rem;
 					opacity: 1;
-					width: 50%;
-					font-size: 1.6rem;
 					visibility: visible;
 
 					&::after {
@@ -226,29 +209,18 @@
 
 @media screen and (max-width: 750px) {
 	.about {
-		.heading {
-			position: relative;
-			top: -10vh;
-			margin: 0;
-		}
 		& &-me {
-			gap: 0;
-			padding: 1rem;
-			align-items: initial;
 			&-img {
-				&:hover {
-					#aboutMe {
-						right: 0;
-					}
+				&:hover #aboutMe,
+				#aboutMe {
+					right: 0;
 				}
+
 				& ~ .about-me-mern {
 					padding: 0;
 				}
 				#aboutMe {
 					position: relative;
-					right: 0;
-					bottom: 0;
-					width: 100%;
 					&::after,
 					&::before {
 						opacity: 0;
