@@ -7,7 +7,6 @@
 	transition: all 0.2s;
 	z-index: 20;
 	position: relative;
-	// overflow: hidden;
 
 	.morph,
 	.morph1 {
@@ -151,7 +150,7 @@
 @media screen and (max-width: 1200px) {
 	.about {
 		.heading {
-			top: clamp(-15rem, -20vh, -20rem);
+			top: clamp(-5rem, -20vh, -20rem);
 			margin: 0;
 		}
 		.my-img {
