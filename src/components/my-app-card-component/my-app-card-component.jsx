@@ -19,14 +19,14 @@ function MyAppCard(props) {
 		if (props.title === "Touristico") {
 			setProject({
 				source: "https://github.com/ggnino/touristico",
-				live: "https://touristico-868504110b09.herokuapp.com/",
+				live: "https://touristico-d9f656114a77.herokuapp.com/",
 				img: img1,
 				desc: "This is a mock app for a tour agency with user authentication. I built the front-end of the app using SCSS with ReactJS. The back-end was built using NodeJS with Express. For authentication JSON web tokens were used, connected to/pulling data from a MongoDB database. Contact me for login credentials or use signup feature.",
 			});
 		} else if (props.title === "Yugioh") {
 			setProject({
 				source: "https://github.com/ggnino/yugioh",
-				live: "https://yugioh-deck-builder-c927cea2bffb.herokuapp.com/",
+				live: "https://yugioh-deck-builder-6b952d4d75df.herokuapp.com/",
 				img: img2,
 				desc: "This just a web app I built while having some downtime between jobs. It is a Yu-Gi-Oh! deck builder app, for Yu-Gi-Oh! fans to search and build their own decks. Has info for non Yu-Gi-Oh! fans to find out a bit more about the game. I built this with SCSS, ReactJS and using the Yu-Gi-Oh! API by YGOPRODeck to get card data.",
 			});
