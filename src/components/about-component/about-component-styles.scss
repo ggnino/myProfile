@@ -90,8 +90,9 @@
 
 				& ~ .about-me-mern {
 					p {
-						width: 100%;
+						width: 80%;
 						color: $primary-color;
+						text-align: justify;
 						span {
 							display: inline;
 							opacity: 1;
